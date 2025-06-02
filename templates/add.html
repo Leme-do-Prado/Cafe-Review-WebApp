@@ -1,20 +1,42 @@
+<!-- templates/add.html -->
 {% extends 'base.html' %}
-<!--Don't forget your import here-->
-{% block title %}Add A New Cafe{% endblock %}
+
+{% block title %}Add Cafe - Cafe Review{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-8">
-
-      <h1>Add a new cafe into the database</h1>
-
-      <!-- This is where your WTForm will go -->
-
-	  <p class="space-above"><a href="#">See all cafes</a></p>
-
-    </div>
-  </div>
+<div class="container mt-5">
+    <h2 class="mb-4">Add a New Cafe</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.name.label(class="form-label") }}
+            {{ form.name(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.location.label(class="form-label") }}
+            {{ form.location(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.open_time.label(class="form-label") }}
+            {{ form.open_time(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.close_time.label(class="form-label") }}
+            {{ form.close_time(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.coffee_rating.label(class="form-label") }}
+            {{ form.coffee_rating(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.wifi_rating.label(class="form-label") }}
+            {{ form.wifi_rating(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.power_rating.label(class="form-label") }}
+            {{ form.power_rating(class="form-control") }}
+        </div>
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
 </div>
-
 {% endblock %}
